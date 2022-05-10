@@ -31,10 +31,7 @@
     <button id="buttonmap" onclick="getposition()">获取定位
     <tton>
     <div id="allmap"></div>
-</body>
-
-<ml>
-<script type="text/javascript">
+	    <script type="text/javascript">
     function getposition() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(onSuccess, onError);
@@ -77,3 +74,6 @@
         }
     }
 </script>
+</body>
+
+
