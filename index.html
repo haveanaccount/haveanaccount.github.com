@@ -9,6 +9,7 @@
     <style type="text/css">
         #buttonmap {
             text-align: center;
+            margin:0 auto;
         }
         
         body,
@@ -45,7 +46,7 @@
                 '经度: ' + position.coords.longitude + '\n' +
                 '海拔: ' + position.coords.altitude + '\n' +
                 '水平精度: ' + position.coords.accuracy + '\n' +
-                '垂直精度: ' + position.coords.altitudeAccura)
+               )
             // GL版命名空间为BMapGL
             // 按住鼠标右键，修改倾斜角和角度
         var map = new BMapGL.Map("allmap"); // 创建Map实例
