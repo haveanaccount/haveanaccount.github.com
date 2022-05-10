@@ -33,13 +33,24 @@
     </button>
     <div id="allmap"></div>
 	    <script type="text/javascript">
-    function getposition() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
-        } else {
-            alert("您的浏览器不支持使用HTML 5来获取地理位置服务");
+     function getLocation(){
+
+        document.getElementById('container').innerHTML = '正在搜寻中，请稍候。。。';
+
+        var options = {
+            enableHighAccuracy:true, 
+            maximumAge:1000
+        }
+
+        if(navigator.geolocation){
+            //浏览器支持geolocation
+            navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+        }else{
+            //浏览器不支持geolocation
+            alert('浏览器不支持GeoLocation!');
         }
     }
+
     //定位数据获取成功响应
     function onSuccess(position) {
         alert('纬度: ' + position.coords.latitude + '\n' +
@@ -74,6 +85,7 @@
                 break;
         }
     }
+		    window.onload = getLocation;
 </script>
 </body>
 
